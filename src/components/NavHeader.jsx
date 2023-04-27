@@ -35,7 +35,7 @@ export default function NavHeader({user}) {
 
                     {/** user의 값이 있을때 user.name을 출력 */}
                     {
-                      user ? <p>{user.name}</p> 
+                      user ? <Navbar.Text>{user.name}</Navbar.Text> 
                           : <Link to='/loginform' className='nav-link'>로그인</Link>
                     }
                 </Nav>

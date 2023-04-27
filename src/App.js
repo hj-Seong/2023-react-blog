@@ -27,6 +27,8 @@ function App() {
   // **확실하게 처음에는 속성에 접근하지 않을때 사용**
   // []배열값을 사용할때 초기값을 null이나 ""으로 두면
   // map() 메소드를 쓸수 없으므로 주의
+
+  // { name: "green" }
   const [user, setUser] = useState(
     null
   );
@@ -46,7 +48,7 @@ function App() {
           <Route path='/boardlist/:id' element={<Board />} />
           <Route path='/boardform' element={<BoardForm />}/>
 
-          <Route path='/loginform' element={<LoginForm />}/>
+          <Route path='/loginform' element={<LoginForm setUser={setUser} />}/>
         </Routes>
       </BrowserRouter>
     </div>
