@@ -64,7 +64,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/boardlist' element={<Boardlist boardlist={boardlist} />}/>
-          <Route path='/boardlist/:id' element={<Board />} />
+          <Route path='/boardlist/:id' element={<Board boardlist={boardlist} />} />
           <Route path='/boardform' element={<BoardForm />}/>
 
           <Route path='/loginform' element={<LoginForm setUser={setUser} />}/>
