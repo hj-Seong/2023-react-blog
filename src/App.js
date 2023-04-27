@@ -33,6 +33,25 @@ function App() {
     null
   );
 
+  const [boardlist, setBoardlist] = useState(
+    [
+      {
+        id:1,
+        title : " 첫번째 게시물",
+        content : "게시물의 내용을 작성합니다",
+        name : "green",
+        date : "2023-04-27"
+      },
+      {
+        id:2,
+        title : " 두번째 게시물",
+        content : "게시물의 내용을 작성합니다",
+        name : "blue",
+        date : "2023-04-27"
+      }
+    ]
+  );
+
 
   // 주소와 페이지(컴포넌트 연결)
   return (
@@ -44,7 +63,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/boardlist' element={<Boardlist />}/>
+          <Route path='/boardlist' element={<Boardlist boardlist={boardlist} />}/>
           <Route path='/boardlist/:id' element={<Board />} />
           <Route path='/boardform' element={<BoardForm />}/>
 
