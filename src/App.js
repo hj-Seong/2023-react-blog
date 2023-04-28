@@ -59,6 +59,11 @@ function App() {
     ]
   );
 
+  // id값을 1씩 증가하는 함수
+  const addId = ()=>{
+    id = id +1;
+  }
+
 
   // 주소와 페이지(컴포넌트 연결)
   return (
@@ -75,7 +80,7 @@ function App() {
           <Route path='/boardform' element={<BoardForm 
                                               setBoardlist={setBoardlist} 
                                               boardlist={boardlist} 
-                                              user={user} id={id} />}/>
+                                              user={user} id={id} addId={addId} />}/>
 
           <Route path='/loginform' element={<LoginForm setUser={setUser} />}/>
         </Routes>

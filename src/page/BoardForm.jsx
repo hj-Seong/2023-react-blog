@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 // 게시물을 작성하고 
 // 작성완료 버튼을 누르면 게시물 추가하기
-export default function BoardForm({setBoardlist, id, boardlist, user}) {
+export default function BoardForm({setBoardlist, id, boardlist, user, addId}) {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+
+  const navigate = useNavigate();
   
   // 게시물을 추가하는 메소드
   const addBoard = (e)=>{
@@ -23,7 +26,10 @@ export default function BoardForm({setBoardlist, id, boardlist, user}) {
       name : user ? user.name : "익명",
       date : "2023-04-28"
     }
-    id = id+1;
+    // props 으로 가져온 값(변수)는 원본 값을 바꿀 수 없다.
+    // 원본값을 바꿔주려면 부모에서 값을 바꾸는 메소드를
+    // 들고와서 실행해야한다.
+    addId();
 
     // 2. 새로운 값이 추가된 새로운 배열 작성
     // 원본배열필요
@@ -32,6 +38,8 @@ export default function BoardForm({setBoardlist, id, boardlist, user}) {
     // 3. 새로운 배열을 set메소드를 이용하여 값 수정
     setBoardlist(newBoardlist)
 
+    // 내용 추가가 끝났다면 게시판으로 이동
+    navigate('/boardlist')
   }
 
 
