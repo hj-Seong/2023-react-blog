@@ -2,6 +2,10 @@
 import  'bootstrap/dist/css/bootstrap.min.css' ;
 import './App.css';
 
+// 리액트 슬릭을 사용하기위해 css추가
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 // 라우터를 사용할때는 BrowserRouter를 들고와서 사용
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
