@@ -14,6 +14,13 @@ import LoginForm from './page/LoginForm'
 import NavHeader from './components/NavHeader';
 import { useState } from 'react';
 
+// 이 값이 바뀌었을때 화면에 출력할 필요가 없으므로
+// 컴포넌트 밖에 작성을 하여 값이 바뀔수 있도록 한다
+
+// * 컴포넌트 안에서 작성하면 업데이트 할때마다 값이 고정됨
+// * 값이 바뀔때 마다 화면을 바꾸고 싶으면 useState() 사용
+let id = 3;
+
 function App() {
   // 데이터를 하위 컴포넌트에 전달하기위해서
   // 상위 컴포넌트에서 데이터를 작성하고 props값을 전달한다
@@ -65,7 +72,10 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/boardlist' element={<Boardlist boardlist={boardlist} />}/>
           <Route path='/boardlist/:id' element={<Board boardlist={boardlist} />} />
-          <Route path='/boardform' element={<BoardForm />}/>
+          <Route path='/boardform' element={<BoardForm 
+                                              setBoardlist={setBoardlist} 
+                                              boardlist={boardlist} 
+                                              user={user} id={id} />}/>
 
           <Route path='/loginform' element={<LoginForm setUser={setUser} />}/>
         </Routes>
