@@ -4,6 +4,7 @@ import SimpleSlider from '../components/SimpleSlider'
 // 날씨API 사용하기위해서 axios를 이용하여 작성 
 // Fetch대신에 axios 사용
 import axios from 'axios'
+import KakaoMapComp from '../components/KakaoMapComp';
 // const axios = require('axios').default;
 
 
@@ -42,6 +43,7 @@ export default function Home() {
     <div>
       <h3>{weather}, {weatherIcon}</h3>
       <SimpleSlider />
+      <KakaoMapComp />
     </div>
   )
 }
