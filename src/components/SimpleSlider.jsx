@@ -52,10 +52,15 @@ export default function SimpleSlider() {
           {
             pictures.map((pic)=>(
               <div>
-                <img 
-                src={require(`../img/${pic}`)} 
+                <div
+                style={{
+                  backgroundImage: `url(${require(`../img/${pic}`)})`,
+                  width : "100%" ,
+                  height: "400px",
+                  backgroundSize :"cover",
+                  backgroundPosition :"center"
+                }} 
                 alt="" 
-                width={300}
                 />
               </div>
             ))

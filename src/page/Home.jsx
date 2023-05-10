@@ -14,6 +14,7 @@ export default function Home() {
   // *만약 객체로 들고 온다면 반드시 loading 사용
   const [weather, setWeather] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("");
+  const [weatherObj, setWeatherObj] = useState();
 
   // axios를 통해 값을 받아오기 위해
   // 비동기 함수 작성(effect 안에 있거나 밖에 있어도 무관)
@@ -28,6 +29,7 @@ export default function Home() {
         // state에 값 지정
         setWeather(response.data.weather[0].description);
         setWeatherIcon(response.data.weather[0].icon);
+        setWeatherObj(response.data)
       } catch (error) {
         console.error(error);
       }
@@ -41,7 +43,8 @@ export default function Home() {
 
   return (
     <div>
-      <h3>{weather}, {weatherIcon}</h3>
+      <h3>{weather ? weather : ""}, {weatherIcon}</h3>
+      <h1>{weatherObj && weatherObj.base}</h1>
       <SimpleSlider />
       <KakaoMapComp />
     </div>

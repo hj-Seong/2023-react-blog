@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 export default function KakaoMapComp() {
-
+  // id값으로 자바스크립트로 찾는 것보다 useRef로 들고오는 것이 안전
   const kakao = window.kakao;
 
   // 카카오자바스크립트에 있어지는 일은 실행되자마자 출력되야하기때문에

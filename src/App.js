@@ -39,6 +39,11 @@ function App() {
   // []배열값을 사용할때 초기값을 null이나 ""으로 두면
   // map() 메소드를 쓸수 없으므로 주의
 
+  // 구조분해를 쓰지않았을때,
+  // result[0], result[1] 각각의 인덱스로 접근
+  // 사용하기 어려움
+  const result = useState(); 
+  
   // { name: "green" }
   const [user, setUser] = useState(
     null
